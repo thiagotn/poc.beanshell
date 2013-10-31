@@ -10,6 +10,8 @@ public class SampleTask implements Task {
 
     private Integer retryCount;
 
+    private Date created;
+
     private Date updated;
 
     public Object getId() {
@@ -22,6 +24,10 @@ public class SampleTask implements Task {
 
     public int getRetryCount() {
         return retryCount;
+    }
+
+    public Date getCreated() {
+        return created;
     }
 
     public Date getProcessedTime() {

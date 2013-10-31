@@ -21,12 +21,22 @@ public class SampleTaskTest {
     }
 
     @Test
-    public void testName() throws Exception {
+    public void testAnalizeOk() throws Exception {
 
-        SampleTask st = Fixture.from(SampleTask.class).gimme("valid");
+        SampleTask task = Fixture.from(SampleTask.class).gimme("valid");
 
-        String condition = "obj.retryCount==10 && obj.state.equals(\"OK\")";
+        String condition = "obj.state.equals(\"OK\")";
 
-        assertTrue(new Analyzer().analyze(st, condition));
+        assertTrue(new Analyzer().analyze(task, condition));
+    }
+
+    @Test
+    public void testAnalizeNOk() throws Exception {
+
+        SampleTask task = Fixture.from(SampleTask.class).gimme("invalid");
+
+        String condition = "obj.state.equals(\"NOK\")";
+
+        assertTrue(new Analyzer().analyze(task, condition));
     }
 }
