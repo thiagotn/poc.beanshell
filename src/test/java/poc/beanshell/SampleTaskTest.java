@@ -21,7 +21,7 @@ public class SampleTaskTest {
     }
 
     @Test
-    public void testAnalizeOk() throws Exception {
+    public void testAnalyzeOk() throws Exception {
 
         SampleTask task = Fixture.from(SampleTask.class).gimme("valid");
 
@@ -31,7 +31,7 @@ public class SampleTaskTest {
     }
 
     @Test
-    public void testAnalizeNOk() throws Exception {
+    public void testAnalyzeNOk() throws Exception {
 
         SampleTask task = Fixture.from(SampleTask.class).gimme("invalid");
 
